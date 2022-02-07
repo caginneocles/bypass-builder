@@ -17,14 +17,5 @@ async function copyFileBuilder(
   options: Options,
   context: BuilderContext,
 ): Promise<BuilderOutput> {
-  try {
-    await fs.copyFile(options.source, options.destination);
-  } catch (err) {
-    return {
-      success: false,
-      error: err.message,
-    };
-  }
-
   return { success: true };
 }
